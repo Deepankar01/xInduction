@@ -40,7 +40,8 @@ module.exports = {
 		rules: [
 			{
 				test: /\.hbs$/,
-				loader: 'handlebars-loader'
+				loader: 'handlebars-loader',
+				query: { inlineRequires: '\/assets\/images\/' }
 			},
 			{
 				include: [path.resolve(__dirname, 'src')],
@@ -62,6 +63,10 @@ module.exports = {
 			},
 			{
 				test: /\.(woff|woff2|eot|ttf|otf)$/,
+				loader: "file-loader"
+			},
+			{
+				test: /\.(png|svg|jpg|gif)$/,
 				loader: "file-loader"
 			},
 			{
