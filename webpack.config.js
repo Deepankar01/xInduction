@@ -82,8 +82,9 @@ module.exports = {
 			title: 'xInduction',
 			hash: true,
 			xhtml: true,
+			favicon: "./src/assets/favicon.ico",
 			meta: {
-				'viewport': 'width=device-width, initial-scale=1, shrink-to-fit=no',
+				'viewport': 'width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no',
 			}
 		})
 	],
