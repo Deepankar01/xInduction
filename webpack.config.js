@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 /*
  * SplitChunksPlugin is enabled by default and replaced
  * deprecated CommonsChunkPlugin. It automatically identifies modules which
@@ -23,7 +24,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
  *
  */
 
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
 	entry: './src/main.js',
@@ -88,6 +88,7 @@ module.exports = {
 		})
 	],
 	optimization: {
+		minimizer: [new UglifyJSPlugin()],
 		splitChunks: {
 			cacheGroups: {
 				vendors: {
@@ -95,7 +96,6 @@ module.exports = {
 					test: /[\\/]node_modules[\\/]/
 				}
 			},
-
 			chunks: 'async',
 			minChunks: 1,
 			minSize: 30000,
