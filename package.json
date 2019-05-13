@@ -4,7 +4,7 @@
   "description": "Induction app for new members joining Xebia",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "live-server ."
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -14,6 +14,6 @@
   "author": "GitHub",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^5.0.0"
+    "live-server": "^1.2.1"
   }
 }
