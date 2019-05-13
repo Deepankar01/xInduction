@@ -3,6 +3,9 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const devMode = process.env.NODE_ENV !== 'production';
+
 /*
  * SplitChunksPlugin is enabled by default and replaced
  * deprecated CommonsChunkPlugin. It automatically identifies modules which
@@ -36,9 +39,12 @@ module.exports = {
 	module: {
 		rules: [
 			{
+				test: /\.hbs$/,
+				loader: 'handlebars-loader'
+			},
+			{
 				include: [path.resolve(__dirname, 'src')],
 				loader: 'babel-loader',
-
 				options: {
 					plugins: ['syntax-dynamic-import'],
 
@@ -55,21 +61,39 @@ module.exports = {
 				test: /\.js$/
 			},
 			{
+				test: /\.(woff|woff2|eot|ttf|otf)$/,
+				loader: "file-loader"
+			},
+			{
 				test: /\.(scss|css)$/,
 
 				use: [
 					{
-						loader: 'style-loader'
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							hmr: devMode,
+						},
 					},
 					{
-						loader: 'css-loader'
+						loader: 'css-loader',
+						options: {
+							sourceMap: true
+						},
 					},
 					{
-						loader: 'sass-loader'
+						loader: 'sass-loader',
+						options: {
+							sourceMap: true
+						},
 					}
 				]
 			}
 		]
+	},
+	resolve: {
+		alias: {
+			jquery: "jquery/src/jquery"
+		}
 	},
 	devServer: {
 		contentBase: path.join(__dirname, 'dist'),
@@ -79,6 +103,7 @@ module.exports = {
 	plugins: [
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
+			template: './src/index.hbs',
 			title: 'xInduction',
 			hash: true,
 			xhtml: true,
@@ -86,6 +111,14 @@ module.exports = {
 			meta: {
 				'viewport': 'width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no',
 			}
+		}),
+		new webpack.ProvidePlugin({
+			$: "jquery",
+			jQuery: "jquery"
+		}),
+		new MiniCssExtractPlugin({
+			filename: devMode ? '[name].css' : '[name].[hash].css',
+			chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
 		})
 	],
 	optimization: {
@@ -97,8 +130,9 @@ module.exports = {
 					test: /[\\/]node_modules[\\/]/
 				}
 			},
-			chunks: 'async',
+			chunks: 'all',
 			minChunks: 1,
+			maxSize: 30000,
 			minSize: 30000,
 			name: true
 		}

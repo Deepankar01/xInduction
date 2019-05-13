@@ -1,2 +1,3 @@
-const a = "adassdsds";
-console.log('hello', a);
+import './scss/base.scss';
+const splash = $("#splash");
+const home = $("#home");
