@@ -1,0 +1,19 @@
+{
+  "name": "XInduction",
+  "version": "1.0.0",
+  "description": "Induction app for new members joining Xebia",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "Induction"
+  ],
+  "author": "GitHub",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^5.0.0"
+  }
+}
