@@ -1,7 +1,7 @@
 import { screens, DEFAULT_SCREEN_INDEX } from './constants';
 let currentScreenIndex = DEFAULT_SCREEN_INDEX;
 
-function moveNext() {
+function moveNext(index) {
     if (screens[currentScreenIndex + 1] !== undefined) {
         currentScreenIndex = currentScreenIndex + 1;
     }
@@ -20,6 +20,7 @@ function hideScreen() {
 }
 
 export function moveScreensOnKey(event) {
+    console.log('reaching');
     hideScreen();
     switch (event.keyCode) {
         case 37:
