@@ -6,7 +6,9 @@
   "scripts": {
     "start": "webpack-dev-server --open",
     "buildDev": "webpack --mode=development",
-    "buildProd": "webpack --mode=production"
+    "buildProd": "webpack --mode=production",
+    "deploy": "gh-pages -d dist",
+    "publish-demo": "npm run buildProd && npm run deploy"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -37,6 +39,7 @@
     "webpack-dev-server": "^3.3.1"
   },
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "jquery": "^3.4.1",
     "loaders.css": "^0.1.2"
   }
