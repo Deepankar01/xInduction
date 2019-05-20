@@ -1,5 +1,4 @@
-const DEFAULT_SCREEN_INDEX = 0;
-export const screens = ['#splash', '#home'];
+import { screens, DEFAULT_SCREEN_INDEX } from './constants';
 let currentScreenIndex = DEFAULT_SCREEN_INDEX;
 
 function moveNext() {
