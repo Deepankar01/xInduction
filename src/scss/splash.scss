@@ -16,6 +16,18 @@
         align-items: center;
         height: 60%;
         width: 100%;
+        .ball-pulse-sync{
+            margin-top: 11%;
+        }
+        .ball-pulse-sync > div:nth-child(1) {
+            background-color: $xebia-purple;
+        }
+        .ball-pulse-sync > div:nth-child(2) {
+            background-color: $orange;
+        }
+        .ball-pulse-sync > div:nth-child(3) {
+            background-color: $grey;
+        }
         .logo-container{
             display: flex;
             justify-content: center;
