@@ -4,22 +4,7 @@
 
 <body>
     <div class="base">
-        {{!-- extract this page out later --}}
-        <div id="splash">
-            <div class="spacer"></div>
-            <div class="content">
-                <div class="logo-container">
-                    <img class="xlogo" src="./assets/images/logo.png" alt="xebia-logo" />
-                    <span class="slogan">Software Development <b>Done Right</b></span>
-                </div>
-                <img class="swirl" src="./assets/images/swirl.svg" alt="xebia-logo" />
-                <div class="loader-inner ball-pulse-sync">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-            </div>
-        </div>
-        <div id="home"></div>
+        {{> screens/splash}}
+        {{> screens/home}}
     </div>
 </body>

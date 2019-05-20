@@ -40,7 +40,7 @@ module.exports = {
 		rules: [
 			{
 				test: /\.hbs$/,
-				loader: 'handlebars-loader',
+				loader: 'handlebars-loader?runtime=handlebars/runtime',
 				query: { inlineRequires: '\/assets\/images\/' }
 			},
 			{

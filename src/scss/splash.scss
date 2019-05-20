@@ -19,6 +19,10 @@
         .ball-pulse-sync{
             margin-top: 11%;
         }
+        .ball-pulse-sync > div{
+            height: 10px;
+            width: 10px;
+        }
         .ball-pulse-sync > div:nth-child(1) {
             background-color: $xebia-purple;
         }
