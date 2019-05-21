@@ -7,6 +7,7 @@ import { screens, DEFAULT_SCREEN_TO_SHOW } from './controlBox/constants';
 import { moveScreensOnKey } from './controlBox/navigation';
 import './controlBox/customAction';
 
+
 document.addEventListener('keydown', moveScreensOnKey);
 
 //default screen set to splash

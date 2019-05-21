@@ -1,6 +1,15 @@
-import { screens, DEFAULT_SCREEN_INDEX } from './constants';
+import { screens, DEFAULT_SCREEN_INDEX, SHOW_NAV_FROM_INDEX } from './constants';
 let currentScreenIndex = DEFAULT_SCREEN_INDEX;
 
+
+function showNavIcons() {
+    console.log(currentScreenIndex);
+    if (currentScreenIndex >= SHOW_NAV_FROM_INDEX) {
+        $('#navArrows').show();
+    } else {
+        $('#navArrows').hide();
+    }
+}
 function moveNext(index) {
     if (screens[currentScreenIndex + 1] !== undefined) {
         currentScreenIndex = currentScreenIndex + 1;
@@ -31,6 +40,7 @@ export function moveScreensOnKey(event) {
             break;
         default:
     }
+    showNavIcons();
     displayScreen();
 };
 
