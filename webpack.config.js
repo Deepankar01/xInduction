@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const devMode = process.env.NODE_ENV !== 'production';
 
 /*
@@ -124,6 +125,10 @@ module.exports = {
 		new MiniCssExtractPlugin({
 			filename: devMode ? '[name].css' : '[name].[hash].css',
 			chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
+		}),
+		new PreloadWebpackPlugin({
+			rel: 'preload',
+			include: 'allAssets' // i know it's bad but need to load all the resources to have a good UX for
 		})
 	],
 	optimization: {
