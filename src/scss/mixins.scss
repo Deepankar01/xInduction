@@ -1,7 +1,29 @@
+@import 'pallete.scss';
+
 @mixin heading {
-    .heading{
+    .heading {
         color: $xebia-purple;
         font-weight: bolder;
         font-size: 25px;
+    }
+}
+
+$colors: (orange: $orange,
+dark-orange: $dark-orange,
+xebia-purple: $xebia-purple,
+grey: $grey,
+green: $green);
+
+@mixin gen-props($prefix, $property, $opacity) {
+
+    @each $color-name,
+    $color in $colors {
+        .#{$prefix}-#{$color-name} {
+            #{$property}: rgba($color, $opacity);
+
+            &:hover {
+                #{$property}: rgba($color, 0.8)
+            }
+        }
     }
 }
