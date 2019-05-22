@@ -8,15 +8,23 @@
     width: 100%;
     .hero{
         height: 40%;
-        background-color: red;
+        background-image: url('../assets/images/netherlands.png');
+        background-position: center;
         display: flex;
         align-items: center;
-        padding: 0px 0px 0px 60px;
         .born{
+            display: flex;
+            align-items: center;
+            padding: 0px 0px 0px 60px;
             font-size: 80px;
-            width: 300px;
+            width: 100%;
+            height: 100%;
             font-weight: bolder;
             color: $white;
+            background-color: rgba(0,0,0,0.4);
+            > div{
+                max-width: 300px;
+            }
             
         }
     }
