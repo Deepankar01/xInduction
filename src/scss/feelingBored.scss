@@ -1,0 +1,14 @@
+@import 'pallete.scss';
+@import 'mixins.scss';
+
+#feelingBored {
+    display: flex;
+    flex-direction: column;
+    background-color: $base-color;
+    width: 100%;
+    @include topHeaderWithImageAndText('../assets/images/sample_office.png', 800px);
+
+    .content {
+        height: 60%;
+    }
+}

@@ -27,3 +27,31 @@ green: $green);
         }
     }
 }
+
+
+@mixin topHeaderWithImageAndText($imageURL, $maxWidth:300px) {
+    .hero {
+        height: 40%;
+        background-image: url($imageURL);
+        background-position: center;
+        display: flex;
+        align-items: center;
+
+        .born {
+            display: flex;
+            align-items: center;
+            padding: 0px 0px 0px 60px;
+            font-size: 80px;
+            width: 100%;
+            height: 100%;
+            font-weight: bolder;
+            color: $white;
+            background-color: rgba(0, 0, 0, 0.35);
+
+            >div {
+                max-width: $maxWidth;
+            }
+
+        }
+    }
+}
