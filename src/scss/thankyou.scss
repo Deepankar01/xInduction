@@ -1,0 +1,32 @@
+@import "pallete.scss";
+
+#thankyou {
+    display: flex;
+    flex-direction: column;
+    background-color: $base-color;
+    width: 100%;
+    padding: 4% 2%;
+
+    .thanksNote {
+        font-size: 40px;
+        font-weight: bolder;
+        color: $xebia-purple;
+        line-height: 70px;
+
+        >div {
+            display: flex;
+            align-items: center;
+        }
+
+        img {
+            height: 40px;
+            margin-left: 20px;
+        }
+
+        .subheading {
+            font-size: 20px;
+            font-weight: normal;
+            color: $grey;
+        }
+    }
+}
