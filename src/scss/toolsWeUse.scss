@@ -1,0 +1,30 @@
+@import 'pallete.scss';
+
+#toolsWeUse {
+    display: grid;
+    grid-template-rows: 40% 60%;
+    width: 100%;
+
+    >.topSection {
+        display: grid;
+        grid-template-columns: 70% 30%;
+        background-color: $xebia-purple;
+        clip-path: ellipse(61% 100% at 50% 0%);
+        align-items: center;
+
+        >.heading {
+            display: flex;
+            align-items: center;
+            font-size: 80px;
+            font-weight: bolder;
+            color: $dark-orange;
+            height: 100%;
+            padding-bottom: 10%;
+            padding-left: 5%;
+        }
+
+        >.logo {
+            height: 30px;
+        }
+    }
+}
