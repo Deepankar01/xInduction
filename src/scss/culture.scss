@@ -1,0 +1,17 @@
+@import 'pallete.scss';
+
+.culture {
+    display: grid;
+    grid-template-rows: 20% 80%;
+    color: $grey;
+    font-size: 20px;
+    padding-right: 50px;
+
+    >img {
+        width: 30%;
+    }
+
+    >.content {
+        margin-top: 30px;
+    }
+}
