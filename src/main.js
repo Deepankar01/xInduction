@@ -10,6 +10,7 @@ import './scss/feelingBored.scss';
 import './scss/thankyou.scss';
 import './scss/thingsToRemember.scss';
 import './scss/toolsWeUse.scss';
+import './scss/toolsBox.scss';
 import { screens, DEFAULT_SCREEN_TO_SHOW } from './controlBox/constants';
 import { moveScreensOnKey } from './controlBox/navigation';
 import './controlBox/customAction';
