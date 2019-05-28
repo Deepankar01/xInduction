@@ -1,0 +1,109 @@
+@import 'pallete.scss';
+
+#xebiaGroup {
+    display: flex;
+    width: 100%;
+    background-color: $light-black;
+    justify-content: center;
+    align-items: center;
+
+    .map {
+        height: 75%;
+        width: 80%;
+        background-image: url('../assets/images/worldMap.png');
+        background-size: cover;
+        position: absolute;
+    }
+
+    >.content {
+        position: relative;
+        height: 90%;
+        width: 95%;
+        display: grid;
+        grid-template-rows: 85% 15%;
+        grid-template-columns: 90% 10%;
+        color: $dark-grey;
+
+        .heading {
+            font-size: 80px;
+            font-weight: bolder;
+        }
+
+        .sub-heading {
+            margin-top: 20px;
+            font-size: 20px;
+            width: 65%;
+            line-height: 30px;
+        }
+
+        .legends {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            margin-bottom: 80%;
+
+            >div {
+                transform: rotate(-90deg);
+
+                .legend {
+                    display: flex;
+                    margin-bottom: 15px;
+
+                    .office {
+                        background-color: $xebia-purple;
+                    }
+
+                    .impact {
+                        background-color: $dark-orange;
+                    }
+
+                    .circle {
+                        width: 15px;
+                        height: 15px;
+                        border: 1px solid $white;
+                        border-radius: 50%;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+
+        .infographs {
+            display: grid;
+            grid-template-columns: repeat(3, 33.33%);
+            padding: 30px 0px;
+            padding-left: 150px;
+
+            >.info {
+                display: grid;
+                grid-template-rows: 80% 20%;
+                justify-content: center;
+                color: $white;
+                border-right: 1px solid $white;
+
+                >.top {
+                    display: grid;
+                    grid-template-columns: 50% 50%;
+
+                    >img {
+                        align-self: center;
+                        width: 80%;
+                    }
+
+                    .text {
+                        align-self: center;
+                        font-size: 30px;
+
+                        font-weight: bolder;
+                    }
+                }
+
+                >.bottom {
+                    font-size: 15px;
+                }
+
+
+            }
+        }
+    }
+}
