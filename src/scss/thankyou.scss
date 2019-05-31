@@ -29,4 +29,14 @@
             color: $grey;
         }
     }
+
+    .video {
+        height: 80%;
+        width: 70%;
+
+        iframe {
+            width: inherit;
+            height: inherit;
+        }
+    }
 }
