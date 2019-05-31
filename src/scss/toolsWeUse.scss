@@ -50,22 +50,21 @@
                 display: flex;
                 overflow-x: auto;
                 max-width: 100%;
-            }
-
-        }
-
-        .footer {
-            padding-left: 50px;
-            color: $grey;
-            font-size: 20px;
-
-            >a {
-
-                color: $dark-orange;
-                text-decoration: none;
+                padding: 0px 0px 0px 5%;
             }
         }
+
     }
 
+    .footer {
+        padding-left: 50px;
+        color: $grey;
+        font-size: 20px;
 
+        >a {
+
+            color: $dark-orange;
+            text-decoration: none;
+        }
+    }
 }
