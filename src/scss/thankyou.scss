@@ -1,17 +1,16 @@
 @import "pallete.scss";
 
 #thankyou {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     background-color: $base-color;
     width: 100%;
+    grid-template-columns: 50% 50%;
     padding: 4% 2%;
 
     .thanksNote {
         font-size: 40px;
         font-weight: bolder;
         color: $xebia-purple;
-        line-height: 70px;
 
         >div {
             display: flex;
@@ -27,16 +26,24 @@
             font-size: 20px;
             font-weight: normal;
             color: $grey;
+            margin-top: 20px;
         }
     }
 
     .video {
+        padding-top: 50px;
         height: 80%;
-        width: 70%;
+        width: 100%;
 
         iframe {
             width: inherit;
             height: inherit;
+        }
+    }
+
+    .side-image {
+        img {
+            width: 100%;
         }
     }
 }
