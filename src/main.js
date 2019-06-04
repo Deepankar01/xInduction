@@ -14,6 +14,7 @@ import './scss/toolsBox.scss';
 import './scss/cultureOfInovation.scss';
 import './scss/culture.scss';
 import './scss/xebiaGroup.scss';
+import './scss/organizationStructure.scss';
 import { screens, DEFAULT_SCREEN_TO_SHOW } from './controlBox/constants';
 import { moveScreensOnKey } from './controlBox/navigation';
 import './controlBox/customAction';
