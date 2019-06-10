@@ -65,6 +65,10 @@
                 }
 
                 .project-row {
+                    justify-content: center;
+                    align-items: center;
+                    display: flex;
+
                     &:hover {
                         cursor: pointer;
                     }
@@ -143,5 +147,21 @@
                 color: $grey;
             }
         }
+    }
+}
+
+
+.xebian {
+    position: absolute;
+    z-index: 99999;
+
+    img {
+        height: 80px;
+    }
+}
+
+.hover-xebian {
+    &:hover {
+        background-color: rgba($light-grey, 0.2)
     }
 }
