@@ -37,9 +37,6 @@
                     }
                 }
 
-                // justify-content: center;
-                // align-items: center;
-
             }
         }
 
@@ -67,12 +64,20 @@
                     background-color: $new-grey;
                 }
 
+                .project-row {
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+
                 .no-border {
                     border: 0;
                 }
 
                 >div {
                     border-left: 1px solid $new-grey;
+
+
 
                     &:nth-child(3) {
                         border-left: 0px;
@@ -113,7 +118,6 @@
                     justify-content: center;
 
                     img {
-                        // justify-content: center;
                         height: 20px;
                     }
                 }
