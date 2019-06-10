@@ -29,7 +29,6 @@ function hideScreen() {
 }
 
 export function moveScreensOnKey(event) {
-    console.log('reaching');
     hideScreen();
     switch (event.keyCode) {
         case 37:

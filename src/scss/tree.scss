@@ -129,6 +129,7 @@
         height: 15%;
         border-radius: 43px;
 
+
         .noLogo-xi {
             @include noLogo($no-logo-xi)
         }
@@ -185,6 +186,15 @@
 
     }
 }
+
+.fade {
+    opacity: 0.2;
+}
+
+.autofade {
+    transition: opacity 0.2s 1s ease;
+}
+
 
 
 /*We will use ::before and ::after to draw the connectors*/
