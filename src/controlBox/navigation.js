@@ -1,6 +1,6 @@
 import { screens, DEFAULT_SCREEN_INDEX, SHOW_NAV_FROM_INDEX } from './constants';
 let currentScreenIndex = DEFAULT_SCREEN_INDEX;
-
+let animationInProgress = false;
 
 function showNavIcons() {
     console.log(currentScreenIndex);
@@ -25,21 +25,85 @@ function displayScreen() {
 }
 
 function hideScreen() {
+    console.log('hiding', currentScreenIndex);
     $(screens[currentScreenIndex]).hide();
 }
 
+function doAnimationSlideOut(fn) {
+    $(screens[currentScreenIndex]).addClass('slide-out-left');
+    setTimeout(() => {
+        fn();
+    }, 500)
+}
+function doAnimationSlideOutRight(fn) {
+    $(screens[currentScreenIndex]).addClass('slide-out-right');
+    setTimeout(() => {
+        fn();
+    }, 500)
+}
+
+function doAnimationSlideIn(fn) {
+    animationInProgress = true;
+    $(screens[currentScreenIndex]).addClass('slide-in-right');
+    setTimeout(() => {
+        fn();
+        animationInProgress = false;
+    }, 500);
+}
+
+
+function doAnimationSlideInLeft(fn) {
+    animationInProgress = true;
+    $(screens[currentScreenIndex]).addClass('slide-in-left');
+    setTimeout(() => {
+        fn();
+        animationInProgress = false;
+    }, 500);
+}
+
+
+function removeClass(cssClassName) {
+    $(screens[currentScreenIndex]).removeClass(cssClassName);
+}
+
+function animatePrevious() {
+    doAnimationSlideOutRight(() => {
+        hideScreen();
+        removeClass('slide-out-right');
+        movePrevious();
+        displayScreen();
+        doAnimationSlideInLeft(() => {
+            removeClass('slide-in-left');
+        });
+    })
+}
+
+function animateNext() {
+    doAnimationSlideOut(() => {
+        hideScreen();
+        removeClass('slide-out-left');
+        moveNext();
+        displayScreen();
+        doAnimationSlideIn(() => {
+            removeClass('slide-in-right');
+        })
+    });
+}
+
+
 export function moveScreensOnKey(event) {
-    hideScreen();
-    switch (event.keyCode) {
-        case 37:
-            movePrevious();
-            break;
-        case 39:
-            moveNext();
-            break;
-        default:
+    if (!animationInProgress) {
+        switch (event.keyCode) {
+            case 37:
+                animatePrevious();
+                break;
+            case 39:
+                animateNext();
+                break;
+            default:
+        }
+        showNavIcons();
     }
-    showNavIcons();
-    displayScreen();
+
 };
 
