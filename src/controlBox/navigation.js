@@ -33,13 +33,13 @@ function doAnimationSlideOut(fn) {
     $(screens[currentScreenIndex]).addClass('slide-out-left');
     setTimeout(() => {
         fn();
-    }, 500)
+    }, 250)
 }
 function doAnimationSlideOutRight(fn) {
     $(screens[currentScreenIndex]).addClass('slide-out-right');
     setTimeout(() => {
         fn();
-    }, 500)
+    }, 250)
 }
 
 function doAnimationSlideIn(fn) {
@@ -48,7 +48,7 @@ function doAnimationSlideIn(fn) {
     setTimeout(() => {
         fn();
         animationInProgress = false;
-    }, 500);
+    }, 250);
 }
 
 
@@ -58,7 +58,7 @@ function doAnimationSlideInLeft(fn) {
     setTimeout(() => {
         fn();
         animationInProgress = false;
-    }, 500);
+    }, 250);
 }
 
 
