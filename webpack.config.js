@@ -120,7 +120,7 @@ module.exports = {
 		}),
 		new webpack.ProvidePlugin({
 			$: "jquery",
-			jQuery: "jquery"
+			jQuery: "jquery",
 		}),
 		new MiniCssExtractPlugin({
 			filename: devMode ? '[name].css' : '[name].[hash].css',

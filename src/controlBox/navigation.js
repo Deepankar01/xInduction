@@ -3,7 +3,6 @@ let currentScreenIndex = DEFAULT_SCREEN_INDEX;
 let animationInProgress = false;
 
 function showNavIcons() {
-    console.log(currentScreenIndex);
     if (currentScreenIndex >= SHOW_NAV_FROM_INDEX) {
         $('#navArrows').show();
     } else {
@@ -25,7 +24,6 @@ function displayScreen() {
 }
 
 function hideScreen() {
-    console.log('hiding', currentScreenIndex);
     $(screens[currentScreenIndex]).hide();
 }
 

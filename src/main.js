@@ -4,7 +4,6 @@ import './scss/splash.scss';
 import './scss/home.scss';
 import './scss/bornInNetherlands.scss';
 import './scss/components.scss';
-import './scss/tree.scss';
 import './scss/ourOffices.scss';
 import './scss/feelingBored.scss';
 import './scss/thankyou.scss';
